@@ -9,6 +9,9 @@ class Movie
     public $time;
     public $poster;
 
+    public $genres = [];
+    public $genreList;
+
 
     //costruttore
     function __construct($title)
@@ -18,5 +21,13 @@ class Movie
     function get_title()
     {
         return $this->title;
+    }
+
+    function get_genre($genre)
+    {
+        array_push($this->genres, $genre);
+
+        //Join array elements with a string
+        $this->genreList = implode(", ", $this->genres);
     }
 };

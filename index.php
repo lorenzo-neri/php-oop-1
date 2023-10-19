@@ -47,6 +47,9 @@ array_push($movieList, $backToTheFuture, $starWars, $pulpFiction);
                             <div>
                                 Durata: <?= $movie->time ?>
                             </div>
+                            <div>
+                                Genere: <?= $movie->genreList ?>
+                            </div>
                         </div>
                     </div>
 
