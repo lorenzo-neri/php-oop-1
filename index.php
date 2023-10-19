@@ -27,16 +27,27 @@ array_push($movieList, $backToTheFuture, $starWars, $pulpFiction);
 
 ?>
 
-<div class="bg-dark">
-    <div class="container">
-        <div class="row">
+<div style="height: 100vh;" class="bg-dark">
+    <div class="container p-5">
+
+        <h1 class="text-danger">Movies</h1>
+
+        <div class="row p-5">
 
             <?php foreach ($movieList as $movie) : ?>
 
                 <div class="col">
 
-                    <div class="card">
+                    <div style="height: 700px" class="card">
                         <img class="card-img-top" src="<?= $movie->poster ?>" alt="<?= $movie->title ?>">
+                        <div class="card-body">
+                            <h3>
+                                <?= $movie->title ?>
+                            </h3>
+                            <div>
+                                Durata: <?= $movie->time ?>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
