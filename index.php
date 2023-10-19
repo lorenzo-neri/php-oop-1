@@ -35,25 +35,21 @@ class Movie
 $movie_1 = new Movie('Back to the Future');
 $movie_2 = new Movie('Star Wars');
 
+
+
+include __DIR__ . '/assets/layout/head.php'
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP OOP</title>
-</head>
+<h3>
+    Film 1: <?php echo $movie_1->get_name() ?>
+</h3>
+<h3>
+    Film 2: <?= $movie_2->get_name() ?>
+</h3>
 
-<body>
-    <h3>
-        Film 1: <?php echo $movie_1->get_name() ?>
-    </h3>
-    <h3>
-        Film 2: <?= $movie_2->get_name() ?>
-    </h3>
-
-</body>
-
-</html>
+<?php
+#FOOTER
+include __DIR__ . '/assets/layout/footer.php'
+?>
