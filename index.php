@@ -15,39 +15,38 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
 */
 
-class Movie
-{
-    //variabili d'istanza
-    public $name;
-    public $time;
+include __DIR__ . '/db/db.php';
 
-    //costruttore
-    function __construct($name)
-    {
-        $this->name = $name;
-    }
-    function get_name()
-    {
-        return $this->name;
-    }
-}
+include __DIR__ . '/models/BackToTheFutureI.php';
+include __DIR__ . '/models/StarWarsI.php';
+include __DIR__ . '/models/PulpFiction.php';
 
-$movie_1 = new Movie('Back to the Future');
-$movie_2 = new Movie('Star Wars');
+include __DIR__ . '/assets/layout/head.php';
 
-
-
-include __DIR__ . '/assets/layout/head.php'
+array_push($movieList, $backToTheFuture, $starWars, $pulpFiction);
 
 ?>
 
+<div class="bg-dark">
+    <div class="container">
+        <div class="row">
 
-<h3>
-    Film 1: <?php echo $movie_1->get_name() ?>
-</h3>
-<h3>
-    Film 2: <?= $movie_2->get_name() ?>
-</h3>
+            <?php foreach ($movieList as $movie) : ?>
+
+                <div class="col">
+
+                    <div class="card">
+                        <img class="card-img-top" src="<?= $movie->poster ?>" alt="<?= $movie->title ?>">
+                    </div>
+
+                </div>
+
+            <?php endforeach ?>
+        </div>
+    </div>
+
+</div>
+
 
 <?php
 #FOOTER
